@@ -1,0 +1,29 @@
+.proposition-container {
+    margin-left: 25%;
+    margin-top: 20px;
+    border-style: none;
+    /* background-color:lightgrey; */
+    flex-direction: column;
+    /* align-items: center; */
+    max-width: 50%;
+    min-height: 100%;
+
+}
+
+
+.proposition-card {
+    border-radius: 10px;
+    position: relative;
+    float: left;
+    /* background-color: #ffbf80; */
+    margin: 1px;
+    min-width: 20%;
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif;
+
+}
+
+.proposition-card:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}

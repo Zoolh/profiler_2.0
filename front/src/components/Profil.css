@@ -1,0 +1,61 @@
+.resultCard {
+    width: 70%;
+    margin-left: 18%;
+}
+
+.bloc-btn {
+    float: left;
+    width: 40%;
+    margin: 2%;
+    background-color: lightgrey;
+    color: black;
+    border: none;
+}
+.bloc-btn:hover {
+    background-color: #ffa64d;
+    cursor: pointer;
+    color: black;
+}
+
+.bloc-btn:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    background-color: #ffa64d;
+    box-shadow: none;
+}
+.bloc-btn:active {
+    outline: none !important;
+    outline-offset: none !important;
+    background-color: #ffa64d;
+    cursor: pointer;
+    color: black;
+}
+
+.btn-close {
+    background-color: lightgrey;
+    color: black;
+    border: none;
+}
+.btn-close:hover {
+    background-color: #ffa64d;
+    cursor: pointer;
+    color: black;
+}
+
+.libelleBloc {
+    margin-top: 2%;
+}
+
+.modal-bloc {
+    max-width: none;
+    width: 90%;
+    height: 90%;
+    /* background-color: red; */
+}
+.modal-body {
+    max-height: none;
+    min-height: 600px;
+}
+
+
+
