@@ -65,7 +65,7 @@ const ModalProfil = props => {
             {allSupports.map((s, key) => {
                 var equals = listeSupports.some(el => el.libelle === s.libelle);
                 return (
-                    <Card key={key} className={classes.root} style={{ backgroundColor: (equals) ? 'LightGreen' : null }}>
+                    <Card key={key} className={classes.root} style={{ backgroundColor: (equals) ? 'LightBlue' : null }}>
                         <CardContent>
                             <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 {s.libelle}

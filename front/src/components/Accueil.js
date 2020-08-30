@@ -35,19 +35,18 @@ const Accueil = props => {
     if (target === "accueil") {
         return (
             <div className="div-accueil">
-                <h1>Déterminez votre profil boursier</h1>
                 <span>
-                    L'un des critères fondamentaux consiste à déterminer si vous êtes Investisseur, Trader ou les 2.<br />
-                    La confusion entre ces deux profils conduit fréquemment à l'échec et à des contre-performances.
+                Savez-vous si vous êtes "Investisseur", "Trader" voire "Les 2" ? <br />
+                Connaissez-vous le rapport risque/performance qui vous correspond ? 
                 </span>
                 <br />
-                <span>En répondant le plus naturellement possible à ces questions, vous pourrez déterminer votre profil d'investisseur
-                  et savoir ce qui vous correspond le mieux sur les marchés actuels.
+                <br /><br />
+                <span>Répondez le plus naturellement à ces questions afin de déterminer VOTRE PROFIL ! 
             </span> <br /><br />
                 <button className="btn btn-start"
                     onClick={getListQuestions}
                 >
-                    Démarrer le questionnaire
+                    Commencer le questionnaire
               </button>
             </div>
         )

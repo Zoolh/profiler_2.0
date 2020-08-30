@@ -76,7 +76,7 @@ const ModalProfil = props => {
             {allTypesGestion.map((g, key) => {
                 console.log(g)
                 return (
-                    <Card key={key} className={classes.root} style={{ backgroundColor: (g.libelle === typeGestion.libelle) ? 'LightGreen' : null }}>
+                    <Card key={key} className={classes.root} style={{ backgroundColor: (g.libelle === typeGestion.libelle) ? 'LightBlue' : null }}>
                         <CardContent>
                             <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 {g.libelle}

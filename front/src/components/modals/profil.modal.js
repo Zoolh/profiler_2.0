@@ -82,7 +82,7 @@ const ModalProfil = props => {
             </div>
             {allProfils.map((p, key) => {
                 return (
-                    <Card key={key} className={classes.root} style={{ backgroundColor: (p.libelle === profil.libelle) ? 'LightGreen' : null }}>
+                    <Card key={key} className={classes.root} style={{ backgroundColor: (p.libelle === profil.libelle) ? 'LightBlue' : null }}>
                         <CardContent>
                             <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 {p.libelle}
