@@ -63,8 +63,8 @@ const Question = props => {
           idQuestion={currentQuestion.id}
         />
         <br />
-        <FontAwesomeIcon icon={faArrowLeft}
-          onClick={backPreviousIndex} />
+        {/* <FontAwesomeIcon icon={faArrowLeft}
+          onClick={backPreviousIndex} /> */}
       </div>
     );
   }

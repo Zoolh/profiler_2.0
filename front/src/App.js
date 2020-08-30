@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div className="App-header">
         <h1>PROFILER</h1>
-        <span>Les clés pour débuter dans la bourse en toute sérénité</span>
+        <span>Pour investir en toute sérénité</span>
       </div>
       <div className="main-container">
         <Accueil />
