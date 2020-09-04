@@ -73,7 +73,7 @@ const ModalProfil = props => {
 
                             <Typography variant="body2" component="p">
                                 <br />
-                                <a href={s.description} target="_blank">Pour plus d'infos, suivez ce lien</a>
+                                <a href={s.description} target="_blank" rel="noopener noreferrer">Pour plus d'infos, suivez ce lien</a>
 
 
 

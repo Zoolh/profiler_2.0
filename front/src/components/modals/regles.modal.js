@@ -7,7 +7,6 @@ import ConseilDataService from '../../services/ConseilServices'
 const ModalProfil = props => {
 
     const [allRegles, setAllRegles] = useState([])
-    const [allTradersRegles, setAllTradersRegles] = useState([])
     const [activeOnglet, setActiveOnglet] = useState()
     const [modalShow, setModalShow] = useState(false)
 
@@ -23,7 +22,6 @@ const ModalProfil = props => {
         ConseilDataService.getAll()
             .then(response => {
                 setAllRegles(response.data)
-                console.log(response.data)
             })
             .catch(e => {
                 console.log(e)
@@ -74,12 +72,12 @@ const ModalProfil = props => {
                             </Button>
                         </div>
                     } />) :
-                    (<For of={allRegles.filter(regle => regle.id != 9 &&
-                        regle.id != 10 && 
-                        regle.id != 11 && 
-                        regle.id != 12 && 
-                        regle.id != 13 &&
-                        regle.id != 14)} as={onglet =>
+                    (<For of={allRegles.filter(regle => regle.id !== 9 &&
+                        regle.id !== 10 && 
+                        regle.id !== 11 && 
+                        regle.id !== 12 && 
+                        regle.id !== 13 &&
+                        regle.id !== 14)} as={onglet =>
                         <div style={{ width: '100%' }}>
                             <Button className="bloc-btn" onClick={() => {
                                 setModalShow(true);

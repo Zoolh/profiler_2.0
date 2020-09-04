@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Proposition from "./Proposition";
-import { useSelector } from "react-redux";
 import "./Question.css"
 
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 const Question = props => {
 
@@ -27,10 +26,10 @@ const Question = props => {
     setIndexQuestion(indexQuestion + 1)
   }
 
-  const backPreviousIndex = () => {
-    setPourcentageBar(progressPercent)
-    setIndexQuestion(indexQuestion - 1)
-  }
+  // const backPreviousIndex = () => {
+  //   setPourcentageBar(progressPercent)
+  //   setIndexQuestion(indexQuestion - 1)
+  // }
 
   const displayProfil = () => {
     props.displayProfil();

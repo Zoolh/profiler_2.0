@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 
 const ModalProfil = props => {
@@ -8,7 +8,9 @@ const ModalProfil = props => {
 
         <div  >
            
-           <a href="https://www.boursedirect.fr/fr/support/debuter-en-bourse" target="_blank">Rendez-vous sur notre rubrique "Formation" pour trouver : nos guides, nos formations gratuites, nos coachings personnalisés et des vidéos</a>
+           <a href="https://www.boursedirect.fr/fr/support/debuter-en-bourse" 
+           target="_blank"
+           rel="noopener noreferrer">Rendez-vous sur notre rubrique "Formation" pour trouver : nos guides, nos formations gratuites, nos coachings personnalisés et des vidéos</a>
     </div>
     );
 };

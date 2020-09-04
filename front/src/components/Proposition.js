@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { For } from 'react-loops'
 import PropositionDataService from '../services/PropositionService'
-import { incrementPointProfil, incrementReponse } from '../actions/profilAction'
+import { incrementPointProfil, incrementReponse, setIsMinor, profilPrudentAuto, profilTraderAuto } from '../actions/profilAction'
 import "./Proposition.css"
 import { incrementPointGestion, incrementReponseGestion } from "../actions/gestionAction";
 import { setSelectedProposition } from '../actions/supportAction';
@@ -26,6 +26,22 @@ const Proposition = props => {
   }
 
   const nextQuestion = (proposition) => {
+
+    // GESTION DES REGLES SPECIALES POUR CERTAINES QUESTIONS
+    if(proposition.id === 1) {
+      dispatch(setIsMinor(true))
+    } 
+
+    if(proposition.id === 42 || proposition.id === 78 || proposition.id === 51 || proposition.id === 9) {
+      dispatch(profilPrudentAuto(true))
+    }
+
+    if(proposition.id === 16 || proposition.id === 17 || proposition.id === 46) {
+      dispatch(profilTraderAuto(true))
+    }
+
+    // FIN GESTION DES REGLES SPECIALES POUR CERTAINES QUESTIONS
+
     if (proposition.pointsProfil) {
       dispatch(incrementReponse())
       dispatch(incrementPointProfil(proposition.pointsProfil))
@@ -34,7 +50,7 @@ const Proposition = props => {
       dispatch(incrementReponseGestion())
       dispatch(incrementPointGestion(proposition.pointsTypeGestion))
     }
-    if (proposition.id == 38 || proposition.id == 39 || proposition.id == 40 || proposition.id == 41) {
+    if (proposition.id === 38 || proposition.id === 39 || proposition.id === 40 || proposition.id === 41) {
       dispatch(setSelectedProposition(proposition.id))
     }
     props.setIndexHandler()

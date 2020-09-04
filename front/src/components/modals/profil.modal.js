@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+import { useSelector } from "react-redux";
 
 
 const ModalProfil = props => {
@@ -43,13 +44,28 @@ const ModalProfil = props => {
 
     const classes = useStyles();
 
+    const isMinor = useSelector((state) => {
+        return state.profil.isMinor
+    })
+
+    const isProfilPrudentAuto = useSelector((state) => {
+        return state.profil.isProfilPrudentAuto
+    })
+
+    const isProfilTraderAuto = useSelector((state) => {
+        return state.profil.isProfilTraderAuto
+    })
+
     useEffect(() => {
-        getProfil()
+        if (!isMinor) {
+            getProfil()
+        }
+
         getAllProfil()
     }, [])
 
     const getProfil = () => {
-        ProfilDataService.getById(props.ResultatProfil)
+        ProfilDataService.getById(isProfilPrudentAuto ? 1 : props.ResultatProfil)
             .then(response => {
                 setProfil({
                     id: response.data.id,
@@ -77,12 +93,18 @@ const ModalProfil = props => {
 
     return (
         <div>
+            {isMinor ? <h3 style={{ backgroundColor: "LightCoral", fontStyle: "italic" }}>Il faut avoir 16 ans pour investir sur les marchés financiers ! </h3> : null}
             <div>
                 Vos réponses permettent de déterminer que vous pouvez opter pour un niveau de risque
             </div>
             {allProfils.map((p, key) => {
                 return (
-                    <Card key={key} className={classes.root} style={{ backgroundColor: (p.libelle === profil.libelle) ? 'LightBlue' : null }}>
+                    <Card key={key} className={classes.root}
+                        style={{
+                            backgroundColor: (isProfilTraderAuto && profil.libelle !== "Prudent") ?
+                                ((p.libelle === profil.libelle || p.libelle === "Trader") ? 'LightBlue' : null) :
+                                ((p.libelle === profil.libelle) ? 'LightBlue' : null)
+                        }}>
                         <CardContent>
                             <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 {p.libelle}

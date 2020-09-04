@@ -20,7 +20,6 @@ const ModalProfil = props => {
         GestionDataService.getAll()
             .then(response => {
                 setAllTypesGestion(response.data)
-                console.log(response.data)
             })
             .catch(e => {
                 console.log(e)
@@ -74,7 +73,6 @@ const ModalProfil = props => {
             Vos réponses permettent de déterminer que vous pouvez opter pour une gestion
             </div>
             {allTypesGestion.map((g, key) => {
-                console.log(g)
                 return (
                     <Card key={key} className={classes.root} style={{ backgroundColor: (g.libelle === typeGestion.libelle) ? 'LightBlue' : null }}>
                         <CardContent>

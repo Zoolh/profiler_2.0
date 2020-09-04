@@ -32,7 +32,7 @@ const Profil = props => {
     });
     const ResultatProfil = Number((nbPointProfil / nbQuestionProfil).toFixed(0));
 
-
+ 
     const nbPointGestion = useSelector((state) => {
         return state.gestion.point
     });
