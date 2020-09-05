@@ -102,16 +102,17 @@ const Question = props => {
         </div>
         <h3 className="titre-question">{currentQuestion.libelle}</h3>
         <div className="indexQuestion"></div>
-        <Proposition
-          setIndexHandler={nextQuestion}
-          idQuestion={currentQuestion.id}
-        />
-        <br />
         {indexQuestion > 0 ? 
         (<FontAwesomeIcon icon={faArrowLeft}
           onClick={previousQuestion}
           id="arrowLeft" />) : 
           null}
+        <Proposition
+          setIndexHandler={nextQuestion}
+          idQuestion={currentQuestion.id}
+        />
+        <br />
+        
       </div>
     );
   }
