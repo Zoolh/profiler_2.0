@@ -1,4 +1,4 @@
-import * as types from "../constants/profilActionTypes";
+import * as types from "../constants/actionTypes";
 
 const initialState = {
     point: 0,
@@ -15,10 +15,20 @@ export default function profil(state = initialState, action) {
                 ...state,
                 point: state.point + action.pointProfil
             }
+        case types.REMOVE_POINT_PROFIL:
+            return {
+                ...state,
+                point: state.point - action.pointProfilToRemove
+            }
         case types.ADD_RESPONSE_COUNT:
             return {
                 ...state,
                 nbReponses: state.nbReponses + 1
+            }
+        case types.REMOVE_ONE_RESPONSE:
+            return {
+                ...state,
+                nbReponses: state.nbReponses - 1
             }
         case types.SET_IS_MINOR:
             return {

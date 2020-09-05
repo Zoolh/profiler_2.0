@@ -13,6 +13,7 @@
     "@types/react-redux": "^7.1.9",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "env-cmd": "^10.1.0",
     "font-awesome": "^4.7.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
@@ -26,8 +27,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -f ./src/environments/.env react-scripts start",
+    "build": "env-cmd -f ./src/environments/.env.prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

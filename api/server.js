@@ -6,10 +6,9 @@ const app = express();
 
 var path = require('path');
 
-// Test deploy heroku
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+// var corsOptions = {
+//   origin: "http://localhost:8081"
+// };
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
@@ -19,7 +18,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
