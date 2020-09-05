@@ -50,12 +50,25 @@
     max-width: none;
     width: 90%;
     height: 90%;
-    /* background-color: red; */
 }
 .modal-body {
     max-height: none;
     min-height: 600px;
 }
 
+.home-btn {
+    cursor: pointer;
+}
+
+#home-div {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-top: 5%;
+}
+
+#result-div {
+    width: 100%;
+}
 
 

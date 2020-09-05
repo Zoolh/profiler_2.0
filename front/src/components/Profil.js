@@ -11,6 +11,9 @@ import ReglesModal from "./modals/regles.modal";
 import SupportModal from "./modals/support.modal";
 import './Profil.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+
 const Profil = props => {
     const [modalShow, setModalShow] = useState(false);
     const [activeOnglet, setActiveOnglet] = useState();
@@ -82,6 +85,7 @@ const Profil = props => {
 
     return (
         <div>
+            <div id="result-div">
             <h1>RESULTATS</h1>
             <>
                 <For of={listeOnglets} as={onglet =>
@@ -96,6 +100,15 @@ const Profil = props => {
                 } />
                 <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
             </>
+            </div>
+            <br/>
+            <div id="home-div">
+            <FontAwesomeIcon icon={faHome}
+             size = '3x'
+            className="home-btn" 
+            onClick={()=> {window.location.reload(false)}}
+           />
+            </div>
         </div>
     );
 };
