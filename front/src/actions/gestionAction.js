@@ -1,4 +1,4 @@
-import * as types from "../constants/profilActionTypes";
+import * as types from "../constants/actionTypes";
 
 
 export const incrementPointGestion = (pointGestion) => ({
@@ -6,7 +6,15 @@ export const incrementPointGestion = (pointGestion) => ({
     pointGestion : pointGestion
 });
 
+export const decrementPointGestion = (pointGestionToRemove) => ({
+    type: types.REMOVE_POINT_GESTION ,
+    pointGestionToRemove : pointGestionToRemove
+});
+
 export const incrementReponseGestion = () => ({
     type: types.ADD_RESPONSE_GESTION_COUNT
 });
 
+export const decrementReponseGestion = () => ({
+    type: types.REMOVE_ONE_RESPONSE_GESTION
+});

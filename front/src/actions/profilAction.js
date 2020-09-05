@@ -1,4 +1,4 @@
-import * as types from "../constants/profilActionTypes";
+import * as types from "../constants/actionTypes";
 
 
 export const incrementPointProfil = (pointProfil) => ({
@@ -6,9 +6,18 @@ export const incrementPointProfil = (pointProfil) => ({
     pointProfil : pointProfil
 });
 
+export const decrementPointProfil = (pointProfilToRemove) => ({
+    type: types.REMOVE_POINT_PROFIL,
+    pointProfilToRemove : pointProfilToRemove
+});
+
 export const incrementReponse = () => ({
     type: types.ADD_RESPONSE_COUNT
 });
+
+export const decrementReponse = () => ({
+    type: types.REMOVE_ONE_RESPONSE
+})
 
 export const setIsMinor = (isMinor) => ({
     type: types.SET_IS_MINOR,

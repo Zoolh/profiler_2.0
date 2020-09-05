@@ -1,4 +1,4 @@
-import * as types from "../constants/profilActionTypes";
+import * as types from "../constants/actionTypes";
 
 const initialState = {
     propositionSelected: 0

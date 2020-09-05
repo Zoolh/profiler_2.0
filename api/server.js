@@ -29,12 +29,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 
 // If I want to rebuild database on each launch or not
-db.sequelize.sync({
-  force: false,
-  alter: true
-}).then(() => {
-  console.log("Drop and re-sync db.");
-});
+// db.sequelize.sync({
+//   force: false,
+//   alter: true
+// }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
 
 
 // simple route - accueil de base de l'API
