@@ -35,11 +35,7 @@ const Accueil = props => {
     if (target === "accueil") {
         return (
             <div className="div-accueil">
-                <span>
-                Savez-vous si vous êtes "Investisseur", "Trader" voire "Les 2" ? <br />
-                Connaissez-vous le rapport risque/performance qui vous correspond ? 
-                </span>
-                <br />
+               
                 <br /><br />
                 <span>Répondez le plus naturellement à ces questions afin de déterminer VOTRE PROFIL ! 
             </span> <br /><br />

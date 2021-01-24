@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div className="App-header">
         <h1>PROFILER</h1>
-        <span>Pour investir en toute sérénité</span>
+        <span>Bien se connaître pour mieux investir</span>
       </div>
       <div className="main-container">
         <Accueil />

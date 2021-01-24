@@ -34,7 +34,7 @@ const Proposition = props => {
       dispatch(lastAnswer('setIsMinor', true))
     } 
 
-    if(proposition.id === 42 || proposition.id === 78 || proposition.id === 51 || proposition.id === 9) {
+    if(proposition.id === 42 || proposition.id === 78 || proposition.id === 51 || proposition.id === 9 || proposition.id === 13 ) {
       dispatch(profilPrudentAuto(true))
       dispatch(lastAnswer('profilPrudentAuto', true))
     }
