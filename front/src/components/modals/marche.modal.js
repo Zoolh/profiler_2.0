@@ -6,6 +6,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+import { useSelector } from "react-redux";
+
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -64,6 +66,9 @@ const ModalProfil = props => {
     });
     const classes = useStyles();
 
+    const isProfilTraderAuto = useSelector((state) => {
+        return state.profil.isProfilTraderAuto
+    })
 
     return (
         <div>
@@ -72,14 +77,17 @@ const ModalProfil = props => {
             </div>
             {allProfils.map((p, key) => {
                 return (
-                    <Card key={key} className={classes.root} style={{ backgroundColor: (p.id === props.ResultatProfil) ? 'LightBlue' : null }}>
+                    <Card key={key} className={classes.root} style={{ backgroundColor:
+                        (isProfilTraderAuto) ?
+                                ((p.id === props.ResultatProfil || p.id === 5) ? 
+                                ((p.id === 5) ? 'Red' : 'LightBlue') : null) :
+                                ((p.id === props.ResultatProfil) ? 'LightBlue' : null) }}>
                         <CardContent>
                             <Typography className={classes.title} color="textSecondary" gutterBottom>
                                 {p.libelle}
                             </Typography>
-
-                            {p.id === props.ResultatProfil ?
-
+                            {(isProfilTraderAuto) ?
+                            ((p.id === props.ResultatProfil || p.id === 5) ?
                                 (<div>
                                     <TableContainer component={Paper}>
                                         <Table aria-label="simple table">
@@ -107,8 +115,36 @@ const ModalProfil = props => {
                                             </TableBody>
                                         </Table>
                                     </TableContainer>
-                                </div>) :
-                                (null)}
+                                </div>) : null) :
+                                ((p.id === props.ResultatProfil )  ? 
+                                    (<div>
+                                        <TableContainer component={Paper}>
+                                            <Table aria-label="simple table">
+                                                <TableHead>
+                                                    <TableRow>
+                                                        <TableCell>Types d'Actifs</TableCell>
+                                                        <TableCell align="left">Pondération</TableCell>
+                                                        <TableCell align="left">Produits</TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {actifSelected.map((a, key) => (
+                                                        <TableRow key={key}>
+                                                            <TableCell component="th" scope="row">
+                                                                {a.libelle}
+                                                            </TableCell>
+                                                            <TableCell align="left">{a.ponderation}</TableCell>
+                                                            <TableCell align="left">{a.produit_actif.map((p, key) => {
+                                                                return(
+                                                                    <div key={key}>{p.libelle}</div>
+                                                                )
+                                                            })}</TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+                                    </div>): (null))}
 
                         </CardContent>
                     </Card>

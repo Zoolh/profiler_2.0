@@ -65,7 +65,7 @@ const ModalProfil = props => {
     }, [])
 
     const getProfil = () => {
-        ProfilDataService.getById(isProfilPrudentAuto ? 1 : props.ResultatProfil)
+        ProfilDataService.getById(props.ResultatProfil)
             .then(response => {
                 setProfil({
                     id: response.data.id,

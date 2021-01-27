@@ -33,8 +33,19 @@ const Profil = props => {
         return state.profil.nbReponses
 
     });
-    const ResultatProfil = Number((nbPointProfil / nbQuestionProfil).toFixed(0));
 
+    // Test - set resultatProfil avec verification des profils auto
+    const isProfilPrudentAuto = useSelector((state) => {
+        return state.profil.isProfilPrudentAuto
+    });
+
+    let ResultatProfil = 0;
+    if(isProfilPrudentAuto) {
+        ResultatProfil = 1;
+    } else {
+        ResultatProfil = Number((nbPointProfil / nbQuestionProfil).toFixed(0));
+    }
+    // Fin test
  
     const nbPointGestion = useSelector((state) => {
         return state.gestion.point
