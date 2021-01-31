@@ -31,29 +31,45 @@ const ModalProfil = props => {
     const [allSupports, setAllSupports] = useState([])
 
     useEffect(() => {
-        getListeSupport()
         getAllSupports()
     }, [])
 
-    const getListeSupport = () => {
-        SupportDataService.getByPropositionId(props.IdPropositionSupport)
-            .then(response => {
-                setListeSupports(response.data)
-            })
-            .catch(e => {
-                console.log(e)
-            })
-    }
 
     const getAllSupports = () => {
         SupportDataService.getAll()
             .then(response => {
                 setAllSupports(response.data)
+
+                let listeTemp = []
+                // 1 = Prudent;
+                if(props.ResultatProfil === 1) {
+                    listeTemp = response.data.filter(support => support.id === 2 || support.id === 3);
+                }
+                // 2 = Equilibré
+                if(props.ResultatProfil === 2) {
+                    listeTemp = response.data.filter(support => support.id === 1 || support.id === 2 || support.id === 3 || support.id === 4);
+                }
+                // 3 = Dynamique
+                if(props.ResultatProfil === 3) {
+                    listeTemp = response.data.filter(support => support.id === 1 || support.id === 2 || support.id === 3 || support.id === 4 || support.id === 5);
+                }
+                // 4 = Offensif
+                if(props.ResultatProfil === 4) {
+                    listeTemp = response.data.filter(support => support.id === 1 || support.id === 2 || support.id === 5);
+                }
+                // 5 = Trader
+                if(props.ResultatProfil === 5) {
+                    listeTemp = response.data.filter(support => support.id === 1 || support.id === 2 || support.id === 5);
+                }
+                setListeSupports(listeTemp)
+
+
             })
             .catch(e => {
                 console.log(e)
             })
     }
+
 
     return (
 
@@ -73,9 +89,6 @@ const ModalProfil = props => {
                             <Typography variant="body2" component="p">
                                 <br />
                                 <a href={s.description} target="_blank" rel="noopener noreferrer">Pour plus d'infos, suivez ce lien</a>
-
-
-
                             </Typography>
                         </CardContent>
                     </Card>

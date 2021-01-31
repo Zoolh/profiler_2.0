@@ -56,9 +56,9 @@ const Profil = props => {
 
     const ResultatGestion = Number((nbPointGestion / nbQuestionGestion).toFixed(0));
 
-    const IdPropositionSupport = useSelector((state) => {
-        return state.support.propositionSelected
-    })
+    // const IdPropositionSupport = useSelector((state) => {
+    //     return state.support.propositionSelected
+    // })
 
     const getOnglet = (onglet) => {
         setActiveOnglet(onglet)
@@ -79,7 +79,7 @@ const Profil = props => {
                 <Modal.Body>
                     {activeOnglet === "Type de Gestion" ? <GestionModal ResultatGestion={ResultatGestion} /> : null}
                     {activeOnglet === "Profil risque gain" ? <ProfilModal ResultatProfil={ResultatProfil} /> : null}
-                    {activeOnglet === "Support d'investissement" ? <SupportModal IdPropositionSupport={IdPropositionSupport} /> : null}
+                    {activeOnglet === "Support d'investissement" ? <SupportModal ResultatProfil={ResultatProfil} /> : null}
                     {activeOnglet === "Marchés & Produits" ? <MarcheModal ResultatProfil={ResultatProfil} /> : null}
                     {activeOnglet === "Règles d'Or" ? <ReglesModal ResultatProfil={ResultatProfil} /> : null}
                     {activeOnglet === "Pour aller plus loin" ? <PlusLoinModal /> : null}
