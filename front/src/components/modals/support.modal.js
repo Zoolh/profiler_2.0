@@ -11,7 +11,6 @@ const ModalProfil = props => {
         root: {
             minWidth: 275,
             marginBottom: 10,
-            // backgroundColor: 'green'
         },
         bullet: {
             display: 'inline-block',

@@ -101,10 +101,9 @@ const ModalProfil = props => {
                 return (
                     <Card key={key} className={classes.root}
                         style={{
-                            // backgroundColor: (isProfilTraderAuto && profil.libelle !== "Prudent") ?
                             backgroundColor: (isProfilTraderAuto) ?
-                                ((p.libelle === profil.libelle || p.libelle === "Trader") ? 
-                                ((p.libelle === "Trader") ? 'Red' : 'LightBlue') : null) :
+                                ((p.libelle === profil.libelle || p.libelle === "Trader") ?
+                                    ((p.libelle === "Trader") ? 'Red' : 'LightBlue') : null) :
                                 ((p.libelle === profil.libelle) ? 'LightBlue' : null)
                         }}>
                         <CardContent>

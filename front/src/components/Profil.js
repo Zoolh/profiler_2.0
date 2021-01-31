@@ -34,19 +34,18 @@ const Profil = props => {
 
     });
 
-    // Test - set resultatProfil avec verification des profils auto
     const isProfilPrudentAuto = useSelector((state) => {
         return state.profil.isProfilPrudentAuto
     });
 
     let ResultatProfil = 0;
-    if(isProfilPrudentAuto) {
+    if (isProfilPrudentAuto) {
         ResultatProfil = 1;
     } else {
         ResultatProfil = Number((nbPointProfil / nbQuestionProfil).toFixed(0));
     }
-    // Fin test
- 
+
+
     const nbPointGestion = useSelector((state) => {
         return state.gestion.point
     });
@@ -97,28 +96,28 @@ const Profil = props => {
     return (
         <div>
             <div id="result-div">
-            <h1>RESULTATS</h1>
-            <>
-                <For of={listeOnglets} as={onglet =>
-                    <div className="resultCard">
-                        <Button className="bloc-btn" onClick={() => {
-                            setModalShow(true);
-                            getOnglet(onglet)
-                        }}>
-                            {onglet}
-                        </Button>
-                    </div>
-                } />
-                <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
-            </>
+                <h1>RESULTATS</h1>
+                <>
+                    <For of={listeOnglets} as={onglet =>
+                        <div className="resultCard">
+                            <Button className="bloc-btn" onClick={() => {
+                                setModalShow(true);
+                                getOnglet(onglet)
+                            }}>
+                                {onglet}
+                            </Button>
+                        </div>
+                    } />
+                    <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
+                </>
             </div>
-            <br/>
+            <br />
             <div id="home-div">
-            <FontAwesomeIcon icon={faHome}
-             size = '3x'
-            className="home-btn" 
-            onClick={()=> {window.location.reload(false)}}
-           />
+                <FontAwesomeIcon icon={faHome}
+                    size='3x'
+                    className="home-btn"
+                    onClick={() => { window.location.reload(false) }}
+                />
             </div>
         </div>
     );
