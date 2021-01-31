@@ -1,9 +1,5 @@
 import * as types from "../constants/actionTypes";
 
-const initialState = {
-    answersList: []
-}
-
 export default function proposition(state = { answersList: [] }, action) {
     switch (action.type) {
         case types.SET_LAST_ANSWER:

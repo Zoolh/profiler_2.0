@@ -48,10 +48,6 @@ const ModalProfil = props => {
         return state.profil.isMinor
     })
 
-    const isProfilPrudentAuto = useSelector((state) => {
-        return state.profil.isProfilPrudentAuto
-    })
-
     const isProfilTraderAuto = useSelector((state) => {
         return state.profil.isProfilTraderAuto
     })

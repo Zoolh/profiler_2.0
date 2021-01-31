@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Question.css"
 import { decrementPointProfil, decrementReponse, setIsMinor, profilPrudentAuto, profilTraderAuto } from '../actions/profilAction'
 import { decrementPointGestion, decrementReponseGestion } from "../actions/gestionAction";
-import { setSelectedProposition } from '../actions/supportAction';
 import { removeLastAnswer } from '../actions/propositionAction'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -63,9 +62,6 @@ const Question = props => {
       if (key === "incrementPointGestion") {
         dispatch(decrementPointGestion(value))
         dispatch(decrementReponseGestion())
-      }
-      if (key === "setSelectedProposition") {
-        dispatch(setSelectedProposition(0))
       }
       dispatch(removeLastAnswer())
     })

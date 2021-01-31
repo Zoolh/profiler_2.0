@@ -6,7 +6,7 @@ import { incrementPointProfil, incrementReponse, setIsMinor, profilPrudentAuto, 
 import { lastAnswer } from '../actions/propositionAction'
 import "./Proposition.css"
 import { incrementPointGestion, incrementReponseGestion } from "../actions/gestionAction";
-import { setSelectedProposition } from '../actions/supportAction';
+
 
 
 const Proposition = props => {
@@ -55,10 +55,6 @@ const Proposition = props => {
       dispatch(incrementPointGestion(proposition.pointsTypeGestion))
       dispatch(lastAnswer('incrementPointGestion', proposition.pointsTypeGestion))
     }
-    // if (proposition.id === 38 || proposition.id === 39 || proposition.id === 40 || proposition.id === 41) {
-    //   dispatch(setSelectedProposition(proposition.id))
-    //   dispatch(lastAnswer('setSelectedProposition', proposition.id))
-    // }
     props.setIndexHandler()
   }
 
