@@ -40,18 +40,18 @@ const db = require("./app/models");
 
 
 // simple route - accueil de base de l'API
-app.get("/", (req, res) => {
-  res.json({ message: "Bienvenue sur l'API Profiler ! " });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Bienvenue sur l'API Profiler ! " });
+// });
 
 
 // Ci-dessous : routes pour accéder au build en mode prod
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Index quand il y a le build
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 require("./app/routes/section.routes")(app);
 require("./app/routes/profil.routes")(app);
